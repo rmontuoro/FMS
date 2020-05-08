@@ -18,6 +18,9 @@
 !***********************************************************************
 
 module tracer_manager_mod
+#ifndef MAX_TRACER_FIELDS_
+#define MAX_TRACER_FIELDS_ 250
+#endif
 ! <CONTACT EMAIL="William.Cooke@noaa.gov">
 !   William Cooke
 ! </CONTACT>
@@ -127,7 +130,7 @@ end interface
 !-----------------------------------------------------------------------
 
 integer            :: num_tracer_fields = 0
-integer, parameter :: MAX_TRACER_FIELDS = 150
+integer, parameter :: MAX_TRACER_FIELDS = MAX_TRACER_FIELDS_
 integer, parameter :: MAX_TRACER_METHOD = 20
 integer, parameter :: NO_TRACER         = 1-HUGE(1)
 integer, parameter :: NOTRACER          = -HUGE(1)
